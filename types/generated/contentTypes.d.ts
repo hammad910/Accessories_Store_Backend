@@ -787,18 +787,19 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    img: Attribute.Media;
     products: Attribute.Relation<
       'api::category.category',
       'manyToMany',
       'api::product.product'
     >;
+    slug: Attribute.UID<'api::category.category', 'title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -869,6 +870,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::category.category'
     >;
+    subtitle: Attribute.String;
+    size: Attribute.JSON;
+    thumnail: Attribute.Media;
+    original_price: Attribute.Decimal;
+    slug: Attribute.UID<'api::product.product', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
