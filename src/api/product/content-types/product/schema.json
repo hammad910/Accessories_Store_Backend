@@ -37,29 +37,6 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "products"
-    },
-    "subtitle": {
-      "type": "string"
-    },
-    "size": {
-      "type": "json"
-    },
-    "thumnail": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "original_price": {
-      "type": "decimal"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "name"
     }
   }
 }
