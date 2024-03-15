@@ -800,6 +800,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'api::product.product'
     >;
     slug: Attribute.UID<'api::category.category', 'title'>;
+    img: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -870,11 +871,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::category.category'
     >;
-    subtitle: Attribute.String;
-    size: Attribute.JSON;
-    thumnail: Attribute.Media;
-    original_price: Attribute.Decimal;
-    slug: Attribute.UID<'api::product.product', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
